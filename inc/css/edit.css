@@ -1,0 +1,307 @@
+#notice_settings .inside,
+#notice_interactions .inside {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+#notice_settings .inside > div,
+#notice_interactions .inside > div {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+#notice_settings .inside h3,
+#notice_interactions .inside h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+#notice_settings .inside h3 {
+    margin-bottom: 10px;
+}
+
+#notice_interactions .inside #dismissals h3 {
+    margin-bottom: 0px;
+}
+
+#notice_settings .inside label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#notice_settings .inside label[for="un-dismissable"],
+#notice_settings .inside label[for="un-hide-after-action"],
+#notice_settings .inside label[for="un-show-user-actions"],
+#notice_settings .inside label[for="un-debug"] {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#notice_settings .inside input[type="text"],
+#notice_settings .inside input[type="date"],
+#notice_settings .inside input[type="time"],
+#notice_settings .inside select,
+#notice_settings .inside textarea,
+#notice_merge_tags .inside select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#notice_settings .inside textarea {
+    min-height: 100px;
+}
+
+#notice_settings .inside input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#notice_settings .inside .desc {
+    font-size: smaller;
+    color: #777;
+    margin-top: 0;
+}
+
+#location .col-2,
+#audience .col-2,
+#scheduling .col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#buttons .col-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 46px;
+}
+
+#un-audience-cont {
+    grid-column: 1 / 3;
+}
+
+#settings .col-1 {
+    margin-bottom: 20px;
+}
+
+#settings .col-1 .input-group {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+}
+
+#settings .col-1 label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#settings .col-1 select {
+    width: calc(50% - 10px);
+}
+
+#settings .col-1 a {
+    white-space: nowrap;
+}
+
+#settings .col-1 > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#settings .col-1 input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#settings .col-1 label[for="un-dismissable"],
+#settings .col-1 label[for="un-hide-after-action"],
+#settings .col-1 label[for="un-show-user-actions"],
+#settings .col-1 label[for="un-debug"] {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+#template-link {
+    margin-left: 10px;
+    padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+    #location .col-2,
+    #audience .col-2,
+    #scheduling .col-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+#un-site-location-post-types .desc,
+#un-audience-roles .desc,
+#un-show-user-actions .desc,
+#un-debug .desc {
+    font-size: smaller;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#un-site-location-post-types .checkboxes,
+#un-audience-roles .checkboxes,
+#un-show-user-actions .checkboxes,
+#un-debug .checkboxes {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+#un-site-location-post-types .checkboxes label,
+#un-audience-roles .checkboxes label,
+#un-show-user-actions .checkboxes label,
+#un-debug .checkboxes label {
+    margin-top: 0 !important;
+    white-space: normal;
+    word-break: break-word;
+    font-weight: normal !important;
+}
+
+#un-site-location-post-types .checkboxes input[type="checkbox"],
+#un-audience-roles .checkboxes input[type="checkbox"],
+#un-show-user-actions .checkboxes input[type="checkbox"],
+#un-debug .checkboxes input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#un-site-location-ids label,
+#un-audience-users label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+#un-site-location-ids textarea,
+#un-audience-users textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+.mce-toolbar .mce-usernotices-bgcolor-button,
+.mce-toolbar .mce-usernotices-mergetags-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 5px;
+    padding: 1px 3px;
+    background: #f0f0f1 !important;
+    border-color: #50575e !important;
+}
+
+.mce-toolbar .mce-usernotices-bgcolor-button:hover,
+.mce-toolbar .mce-usernotices-mergetags-button:hover {
+    background-color: #ddd;
+}
+
+.mce-toolbar .mce-usernotices-bgcolor-button .mce-txt,
+.mce-toolbar .mce-usernotices-mergetags-button .mce-txt {
+    font-size: 13px;
+}
+
+#usernotices-preview-btn {
+    width: 100%;
+    text-align: center;
+}
+
+.usernotice-action.button {
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.usernotice-action.button:hover {
+    background-color: #FFF;
+    color: #000;
+    box-shadow: 2px 2px 5px #000;
+}
+
+
+#notice_settings h3,
+#notice_interactions #actions h3 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+#notice_interactions strong {
+    color: #222;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#notice_interactions a {
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#notice_interactions a:hover {
+    text-decoration: underline;
+}
+
+p.section-info {
+    margin-top: 0 !important;
+}
+
+#un-site-location-shortcode {
+    margin-bottom: 2rem;
+}
+
+code.shortcode {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 5px #1c1c1c;
+    background: #2271B1;
+    color: white;
+    text-decoration: none;
+}
+
+.un-click-to-copy:hover,
+code.shortcode:hover {
+    text-decoration: none;
+}
+
+.un-click-to-copy:focus {
+    color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.un-click-to-copy:focus code.shortcode {
+    box-shadow: 0 0 0 2px #2271b1;
+    outline: 2px solid transparent;
+}

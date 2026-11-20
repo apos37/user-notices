@@ -1,0 +1,63 @@
+h2 {
+    margin: 3rem 0 1rem 0;
+}
+
+.report-section {
+    margin-bottom: 2rem;
+}
+
+#actions-by-type {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: fit-content;
+}
+
+#usernotice-report .widefat {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#usernotice-report .widefat th, 
+#usernotice-report .widefat td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#usernotice-report .widefat .id { 
+    width: 120px; 
+}
+
+#usernotice-report .widefat .item { 
+    width: auto; 
+}
+
+#usernotice-report .widefat .count { 
+    width: 40%; 
+}
+
+#usernotice-report .widefat th {
+    background-color: #1E427F;
+    color: white;
+    font-weight: bold;
+}
+
+#usernotice-report .widefat tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#usernotice-report .widefat tr:hover {
+    background-color: #eaeaea;
+}
+
+#usernotice-report .widefat a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+#usernotice-report .widefat a:hover {
+    text-decoration: underline;
+}

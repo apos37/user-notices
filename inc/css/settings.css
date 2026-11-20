@@ -1,0 +1,32 @@
+/* LICENSING */
+.license-status {
+    padding: 10px;
+    border-radius: 5px;
+    background: #dc3232;
+    color: white;
+    margin-top: 7px;
+    display: block;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.license-status.active {
+    background: #46b450 !important;
+    font-weight: normal !important;
+}
+
+.license-status a {
+    color: white;
+}
+
+/* GENERAL */
+p.description {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 2px #ccc;
+}
