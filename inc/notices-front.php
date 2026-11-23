@@ -8,7 +8,6 @@
  * Define Namespaces
  */
 namespace PluginRx\UserNotices;
-use PluginRx\UserNotices\License;
 use PluginRx\UserNotices\Helpers;
 use PluginRx\UserNotices\Notices;
 
@@ -46,11 +45,6 @@ class DisplayNotice {
      * @return void
      */
     public function init() {
-
-        // Check license validity
-        if ( !(new License())->has_been_validated() ) {
-            return;
-        }
 
         // Display any user notices
         add_action( 'wp_footer', [ $this, 'display_notices' ] );

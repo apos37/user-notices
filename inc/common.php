@@ -48,6 +48,9 @@ class Common {
 
 		// Add links to the website and discord
         add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 2 );
+
+        // Remove leftover license data from older versions
+		add_action( 'admin_init', [ $this, 'remove_old_license_data' ] );
         
     } // End __construct()
 
@@ -77,10 +80,32 @@ class Common {
 	} // End check_php_version()	
 
 
+    /**
+	 * Remove the license data left behind by older versions (runs once)
+	 *
+	 * @return void
+	 */
+	public function remove_old_license_data() {
+		$flag = USERNOTICES_TEXTDOMAIN . '-license-data-removed';
+		if ( get_option( $flag ) ) {
+			return;
+		}
+
+		delete_option( USERNOTICES_TEXTDOMAIN . '-license-id' );
+		delete_option( USERNOTICES_TEXTDOMAIN . '-license-result' );
+		delete_option( USERNOTICES_TEXTDOMAIN . '-license-hbv' );
+		delete_transient( USERNOTICES_TEXTDOMAIN . '-license-data' );
+		delete_transient( USERNOTICES__TEXTDOMAIN . '_update_check' );
+
+		update_option( $flag, 1, false );
+	} // End remove_old_license_data()
+
+
 	/**
      * Add links to the website and discord
      *
-     * @param array $links
+     * @param array $links The existing plugin row meta links.
+     * @param string $file The plugin file path.
      * @return array
      */
     public function plugin_row_meta( $links, $file ) {
@@ -137,6 +162,13 @@ class Common {
         }
 
 		delete_option( (new Interactions())->option_key_per_page );
+
+        delete_option( USERNOTICES_TEXTDOMAIN . '-license-id' );
+        delete_option( USERNOTICES_TEXTDOMAIN . '-license-result' );
+        delete_option( USERNOTICES_TEXTDOMAIN . '-license-hbv' );
+        delete_option( USERNOTICES_TEXTDOMAIN . '-license-data-removed' );
+        delete_transient( USERNOTICES_TEXTDOMAIN . '-license-data' );
+        delete_transient( USERNOTICES__TEXTDOMAIN . '_update_check' );
     } // End uninstall_plugin()
     
 }

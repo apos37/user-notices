@@ -99,48 +99,8 @@ class Settings {
      *
      * @return array
      */
-    public function get_settings_fields( $return_keys_only = false ) {
-        if ( isset( $_GET[ 'post_type' ] ) && sanitize_key( $_GET[ 'post_type' ] ) === (new Notices())->post_type && // phpcs:ignore
-             isset( $_GET[ 'page' ] ) && sanitize_key( $_GET[ 'page' ] ) === USERNOTICES__TEXTDOMAIN . '_settings' ) { // phpcs:ignore
-
-            // Check license validation
-            $LICENSE = new License();
-            if ( isset( $_GET[ 'settings-updated' ] ) && sanitize_key( $_GET[ 'settings-updated' ] ) === 'true' ) { // phpcs:ignore
-                $license = $LICENSE->check_license( true );
-                $just_updated = true;
-            } else {
-                $license = $LICENSE->get_license_results();
-                $just_updated = false;
-            }
-            
-            if ( $license && isset( $license[ 'status' ] ) ) {
-                if ( !$just_updated && $license[ 'status' ] == 'error' ) {
-                    $license = $LICENSE->check_license( true );
-                }
-
-                $time = $LICENSE->get_license_check_time();
-                $display_time = $time ? (new Helpers())->convert_timezone( $time, 'Y-m-d H:i:s T' ) : 'Unknown';
-
-                $license_comments = '<span class="license-status ' . sanitize_key( $license[ 'status' ] ) . '" title="' . __( 'Last checked: ', 'user-notices' ) . '' . $display_time . '">' . wp_kses_post( $license[ 'message' ] ) . '</span>';
-            } else {
-                /* translators: %s: Plugin author's website link */
-                $license_comments = '<em>' . sprintf( __( 'Make sure to add your website to your account on %s, then paste your License ID here.', 'user-notices' ),
-                    '<a href="' . USERNOTICES_AUTHOR_URI . '" target="_blank">' . str_replace( [ 'https://', '/' ], '', USERNOTICES_AUTHOR_URI ) . '</a>',
-                ) . '</em>';
-            }
-        } else {
-            $license_comments = '';
-        }
-    
+    public function get_settings_fields( $return_keys_only = false ) {   
         $fields = [
-            [
-                'key'        => 'license-id',
-                'title'      => __( 'License ID', 'user-notices' ),
-                'type'       => 'text',
-                'sanitize'  => 'sanitize_text_field',
-                'section'    => 'license',
-                'comments'   => '<br>'.$license_comments
-            ],
             [
                 'key'        => 'delete-db',
                 'title'      => __( 'Delete All User Interaction Data on Uninstall', 'user-notices' ),
@@ -179,7 +139,6 @@ class Settings {
          * Sections
          */
         $settings_sections = [
-            [ 'license', __( 'License', 'user-notices' ), '' ],
             [ 'general', __( 'General', 'user-notices' ), '' ]
         ];
 

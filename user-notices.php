@@ -3,16 +3,16 @@
  * Plugin Name:         User Notices
  * Plugin URI:          https://pluginrx.com/plugin/user-notices
  * Description:         Display targeted notices to your website visitors based on various criteria like login status, user roles, specific users, and more.
- * Version:             1.1.1
+ * Version:             1.2.1
  * Requires at least:   6.0
- * Tested up to:        7.0
  * Requires PHP:        8.0
  * Author:              PluginRx
  * Author URI:          https://pluginrx.com/
  * Discord URI:         https://discord.gg/3HnzNEJVnR
  * Text Domain:         user-notices
- * License:             Proprietary
- * License URI:         https://pluginrx.com/proprietary-license-agreement/
+ * License:             GPL-2.0-or-later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI:          https://pluginrx.com/
  * Created on:          February 6, 2025
  * Premium:             true
  */
@@ -86,8 +86,7 @@ require_once USERNOTICES_INCLUDES_ABSPATH . 'db.php';
 require_once USERNOTICES_INCLUDES_ABSPATH . 'common.php';
 require_once USERNOTICES_INCLUDES_ABSPATH . 'helpers.php';
 require_once USERNOTICES_INCLUDES_ABSPATH . 'wp-list-table.php';
-require_once USERNOTICES_INCLUDES_ABSPATH . 'license.php';
-require_once USERNOTICES_INCLUDES_ABSPATH . 'update.php';
+require_once USERNOTICES_INCLUDES_ABSPATH . 'updater.php';
 require_once USERNOTICES_INCLUDES_ABSPATH . 'interactions.php';
 require_once USERNOTICES_INCLUDES_ABSPATH . 'report.php';
 require_once USERNOTICES_INCLUDES_ABSPATH . 'examples.php';

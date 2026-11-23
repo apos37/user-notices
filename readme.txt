@@ -2,11 +2,11 @@
 Contributors: apos37
 Tags: notices, user, popup, banner, notifications
 Requires at least: 6.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.1.1
-License: Proprietary
-License URI: https://pluginrx.com/proprietary-license-agreement/
+Stable tag: 1.2.1
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Display targeted notices to your website visitors based on various criteria like login status, user roles, specific users, and more.
 
@@ -64,6 +64,12 @@ Yes, User Notices provides hooks for developers to customize the plugin's functi
 13. Report page.
 
 == Changelog ==
+
+= 1.2.1 =
+* Update: Removed the license requirement. The plugin works without a license ID.
+* Update: Replaced the old license-based updater with a drop-in updater that checks PluginRx.com for new versions.
+* Update: Added the Update URI header so WordPress only checks PluginRx.com for updates to this plugin.
+* Update: Changed the license to GPLv2 or later.
 
 = 1.1.1 =
 * Compatibility: Increased minimum required WordPress version to 6.0
